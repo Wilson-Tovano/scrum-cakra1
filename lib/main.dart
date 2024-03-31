@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: EmptyPage(),
       ),
@@ -16,23 +18,36 @@ class MyApp extends StatelessWidget {
 }
 
 class EmptyPage extends StatelessWidget {
+  const EmptyPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    print("Size W is ${MediaQuery.of(context).size.width}");
-    print("Size H is ${MediaQuery.of(context).size.height}");
+    debugPrint("Size W is ${MediaQuery.of(context).size.width}");
+    debugPrint("Size H is ${MediaQuery.of(context).size.height}");
     var pixRatio = MediaQuery.of(context).devicePixelRatio;
-    print(
-        "Corrected size W is ${MediaQuery.of(context).size.width * pixRatio}");
-    print(
-        "Corrected size H is ${MediaQuery.of(context).size.height * pixRatio}");
+    debugPrint(
+      "Corrected size W is ${MediaQuery.of(context).size.width * pixRatio}",
+    );
+    debugPrint(
+      "Corrected size H is ${MediaQuery.of(context).size.height * pixRatio}",
+    );
     return Center(
       child: Container(
         width: 1080 / pixRatio,
         height: 2280 / pixRatio,
-        color: Colors.grey,
-        child: Column(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromRGBO(24, 0, 119, 15),
+              Color.fromRGBO(54, 0, 0, 15),
+            ]
+          )
+        ),
+        child: const Column(
           children: [
-            //all code here
+            // All code here
           ],
         ),
       ),
