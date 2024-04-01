@@ -3,7 +3,7 @@ import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(debugShowCheckedModeBanner: true, home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
