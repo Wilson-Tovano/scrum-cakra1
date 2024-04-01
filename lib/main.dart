@@ -1,9 +1,16 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:flutter/material.dart';
+import 'package:cakra_asset_management/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MaterialApp(debugShowCheckedModeBanner: true, home: MyApp()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
