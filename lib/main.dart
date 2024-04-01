@@ -1,7 +1,9 @@
+import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
+import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -9,48 +11,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: EmptyPage(),
+    return FlutterSplashScreen.fadeIn(
+      gradient: const LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          Color.fromRGBO(24, 0, 119, 1),
+          Color.fromRGBO(54, 0, 0, 1),
+        ],
       ),
-    );
-  }
-}
-
-class EmptyPage extends StatelessWidget {
-  const EmptyPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    debugPrint("Size W is ${MediaQuery.of(context).size.width}");
-    debugPrint("Size H is ${MediaQuery.of(context).size.height}");
-    var pixRatio = MediaQuery.of(context).devicePixelRatio;
-    debugPrint(
-      "Corrected size W is ${MediaQuery.of(context).size.width * pixRatio}",
-    );
-    debugPrint(
-      "Corrected size H is ${MediaQuery.of(context).size.height * pixRatio}",
-    );
-    return Center(
-      child: Container(
-        width: 1080 / pixRatio,
-        height: 2280 / pixRatio,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(24, 0, 119, 15),
-              Color.fromRGBO(54, 0, 0, 15),
-            ]
-          )
-        ),
-        child: const Column(
-          children: [
-            // All code here
-          ],
-        ),
+      onInit: () {
+        debugPrint("On Init");
+      },
+      onEnd: () {
+        debugPrint("On End");
+      },
+      childWidget: SizedBox(
+        height: 250,
+        width: 250,
+        child: Image.asset("assets/logo-white.png"),
       ),
+      onAnimationEnd: () {
+        debugPrint("On Fade In End");
+      },
+      nextScreen: const LandingPage(),
     );
   }
 }
