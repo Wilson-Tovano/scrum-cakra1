@@ -1,5 +1,6 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
+import 'package:cakra_asset_management/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +9,12 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
-      child: const MyApp(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: lightMode,
+        darkTheme: darkMode,
+        home: const MyApp(),
+      ),
     ),
   );
 }
