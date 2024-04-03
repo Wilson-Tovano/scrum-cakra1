@@ -1,34 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:cakra_asset_management/src/layout.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Size W is ${MediaQuery.of(context).size.width}");
-    debugPrint("Size H is ${MediaQuery.of(context).size.height}");
-    var pixRatio = MediaQuery.of(context).devicePixelRatio;
-    debugPrint(
-      "Corrected size W is ${MediaQuery.of(context).size.width * pixRatio}",
-    );
-    debugPrint(
-      "Corrected size H is ${MediaQuery.of(context).size.height * pixRatio}",
-    );
-    return Center(
-      child: Container(
-        width: 1080 / pixRatio,
-        height: 2280 / pixRatio,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(24, 0, 119, 15),
-              Color.fromRGBO(54, 0, 0, 15),
-            ]
-          )
-        ),
-        child: Column(
+    return Scaffold(
+      body: BaseLayout(
+       child: Column(
           children: [
 
             FractionallySizedBox(
@@ -80,23 +60,23 @@ class ForgotPassword extends StatelessWidget {
 
             
 
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(255, 244, 144, 1),
+                backgroundColor: const Color.fromRGBO(255, 244, 144, 1),
               ),
               onPressed: () {},
-              child: Text("KIRIM", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+              child: const Text("KIRIM", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
             ),
 
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             FractionallySizedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Kembali ke Halaman ", style: TextStyle(color: Colors.white),),
+                  const Text("Kembali ke Halaman ", style: TextStyle(color: Colors.white),),
                   
                   TextButton(
                     onPressed: (){},
@@ -110,7 +90,7 @@ class ForgotPassword extends StatelessWidget {
                     )
                   ),
 
-                  Text("atau", style: TextStyle(color: Colors.white),),
+                  const Text("atau", style: TextStyle(color: Colors.white),),
 
                   TextButton(
                     onPressed: (){},
