@@ -4,8 +4,6 @@ import 'package:cakra_asset_management/src/pages/register/index.dart';
 import 'package:provider/provider.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 
-
-
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
 
