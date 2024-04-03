@@ -9,45 +9,44 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: lightMode,
-        darkTheme: darkMode,
-        home: const MyApp(),
-      ),
+      child: MyApp(),
     ),
   );
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return FlutterSplashScreen.fadeIn(
-      gradient: const LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Color.fromRGBO(24, 0, 119, 1),
-          Color.fromRGBO(54, 0, 0, 1),
-        ],
+    return MaterialApp(
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      home: FlutterSplashScreen.fadeIn(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color.fromRGBO(24, 0, 119, 1),
+            Color.fromRGBO(54, 0, 0, 1),
+          ],
+        ),
+        onInit: () {
+          debugPrint("On Init");
+        },
+        onEnd: () {
+          debugPrint("On End");
+        },
+        childWidget: SizedBox(
+          height: 250,
+          width: 250,
+          child: Image.asset("assets/logo-white.png"),
+        ),
+        onAnimationEnd: () {
+          debugPrint("On Fade In End");
+        },
+        nextScreen: const LandingPage(),
       ),
-      onInit: () {
-        debugPrint("On Init");
-      },
-      onEnd: () {
-        debugPrint("On End");
-      },
-      childWidget: SizedBox(
-        height: 250,
-        width: 250,
-        child: Image.asset("assets/logo-white.png"),
-      ),
-      onAnimationEnd: () {
-        debugPrint("On Fade In End");
-      },
-      nextScreen: const LandingPage(),
     );
   }
 }

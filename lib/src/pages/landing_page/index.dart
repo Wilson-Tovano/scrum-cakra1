@@ -1,7 +1,9 @@
 import 'package:cakra_asset_management/src/layout.dart';
 import 'package:flutter/material.dart';
-// import 'package:cakra_asset_management/src/pages/forgot_password/index.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
+import 'package:provider/provider.dart';
+import 'package:cakra_asset_management/theme/theme_provider.dart';
+
 
 
 class LandingPage extends StatelessWidget {
@@ -55,11 +57,11 @@ class LandingPage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        debugPrint('Go to login page');
+                        Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
                       },
-                      child: const Text(
+                      child:  Text(
                         'Masuk',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                   ),
