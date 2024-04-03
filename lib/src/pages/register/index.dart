@@ -8,13 +8,14 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BaseLayout(
-       child: Column(
+        child: Column(
           children: [
-
-            FractionallySizedBox(
+            const FractionallySizedBox(
               widthFactor: 0.6,
-              child: Container(
-                child: Image.asset("assets/img/logo-full-white.png")
+              child:  Image(
+                image: AssetImage("assets/logo-white.png"),
+                width: 250,
+                height: 250,
               ),
             ),
 
@@ -26,12 +27,11 @@ class RegisterPage extends StatelessWidget {
             ),
 
             const Text(
-              "Daftar", 
+              "Daftar",
               style: TextStyle(
-                fontWeight: FontWeight.bold, 
-                fontSize: 30, 
-                color: Colors.white
-              ),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: Colors.white),
             ),
 
             const FractionallySizedBox(
@@ -42,7 +42,7 @@ class RegisterPage extends StatelessWidget {
             ),
 
             const Padding(
-              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              padding: EdgeInsets.only(left: 100, right: 100, bottom: 15),
               child: TextField(
                 style: TextStyle(color: Colors.white, fontSize: 17),
                 decoration: InputDecoration(
@@ -54,12 +54,12 @@ class RegisterPage extends StatelessWidget {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                   ),
-                )  
+                )
               ),
             ),
 
             const Padding(
-              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              padding: EdgeInsets.only(left: 100, right: 100, bottom: 15),
               child: TextField(
                 style: TextStyle(color: Colors.white, fontSize: 17),
                 decoration: InputDecoration(
@@ -71,12 +71,12 @@ class RegisterPage extends StatelessWidget {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                   ),
-                )  
+                )
               ),
             ),
 
             const Padding(
-              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              padding: EdgeInsets.only(left: 100, right: 100, bottom: 15),
               child: TextField(
                 style: TextStyle(color: Colors.white, fontSize: 17),
                 decoration: InputDecoration(
@@ -88,12 +88,12 @@ class RegisterPage extends StatelessWidget {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                   ),
-                )  
+                )
               ),
             ),
 
             const Padding(
-              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              padding: EdgeInsets.only(left: 100, right: 100, bottom: 15),
               child: TextField(
                 style: TextStyle(color: Colors.white, fontSize: 17),
                 decoration: InputDecoration(
@@ -105,7 +105,7 @@ class RegisterPage extends StatelessWidget {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                   ),
-                )  
+                )
               ),
             ),
 
@@ -122,7 +122,7 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(height: 20,),
 
             FractionallySizedBox(
-              widthFactor: 0.3,
+              // widthFactor: 0.2,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -133,7 +133,7 @@ class RegisterPage extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         )
                   ),
-                  
+
                   TextButton(
                     onPressed: (){},
                     child: const Text(
@@ -145,8 +145,7 @@ class RegisterPage extends StatelessWidget {
                       )
                     )
                   ),
-              
-                            
+
                 ],
               ),
             )

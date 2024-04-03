@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/layout.dart';
 
-class forgotPassword extends StatelessWidget {
-  const forgotPassword({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class forgotPassword extends StatelessWidget {
             ),
 
             const Text(
-              "Lupa Kata Sandi", 
+              "Daftar", 
               style: TextStyle(
                 fontWeight: FontWeight.bold, 
                 fontSize: 30, 
@@ -38,6 +38,23 @@ class forgotPassword extends StatelessWidget {
               widthFactor: 0.7,
               child: Divider(
                 color: Colors.white,
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              child: TextField(
+                style: TextStyle(color: Colors.white, fontSize: 17),
+                decoration: InputDecoration(
+                  hintText: "Nama Lengkap",
+                  hintStyle: TextStyle(color: Colors.white),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                )  
               ),
             ),
 
@@ -58,7 +75,39 @@ class forgotPassword extends StatelessWidget {
               ),
             ),
 
-            
+            const Padding(
+              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              child: TextField(
+                style: TextStyle(color: Colors.white, fontSize: 17),
+                decoration: InputDecoration(
+                  hintText: "Kata Sandi",
+                  hintStyle: TextStyle(color: Colors.white),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                )  
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(left: 130, right: 130, bottom: 15),
+              child: TextField(
+                style: TextStyle(color: Colors.white, fontSize: 17),
+                decoration: InputDecoration(
+                  hintText: "Kata Sandi Ulang",
+                  hintStyle: TextStyle(color: Colors.white),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                )  
+              ),
+            ),
 
             const SizedBox(height: 20,),
 
@@ -67,35 +116,28 @@ class forgotPassword extends StatelessWidget {
                 backgroundColor: const Color.fromRGBO(255, 244, 144, 1),
               ),
               onPressed: () {},
-              child: const Text("KIRIM", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+              child: const Text("DAFTAR", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
             ),
 
             const SizedBox(height: 20,),
 
             FractionallySizedBox(
+              widthFactor: 0.3,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text("Kembali ke Halaman ", style: TextStyle(color: Colors.white),),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Sudah Mendaftar?",
+                          style: TextStyle(color: Colors.white),
+                        )
+                  ),
                   
                   TextButton(
                     onPressed: (){},
                     child: const Text(
                       "Masuk",
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 244, 144, 1),
-                        decoration: TextDecoration.underline,
-                        decorationColor: Color.fromRGBO(255, 244, 144, 1),
-                      )
-                    )
-                  ),
-
-                  const Text("atau", style: TextStyle(color: Colors.white),),
-
-                  TextButton(
-                    onPressed: (){},
-                    child: const Text(
-                      "Daftar",
                       style: TextStyle(
                         color: Color.fromRGBO(255, 244, 144, 1),
                         decoration: TextDecoration.underline,
