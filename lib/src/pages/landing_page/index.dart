@@ -1,5 +1,6 @@
 import 'package:cakra_asset_management/src/layout.dart';
 import 'package:flutter/material.dart';
+import 'package:cakra_asset_management/src/pages/register/index.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -29,7 +30,11 @@ class LandingPage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        debugPrint('Go to register page');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const RegisterPage()),
+                        );
                       },
                       child: const Text(
                         'Daftar',
