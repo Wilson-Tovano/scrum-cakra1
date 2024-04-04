@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/layout.dart';
 
-class forgotPassword extends StatelessWidget {
-  const forgotPassword({super.key});
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,6 @@ class forgotPassword extends StatelessWidget {
       appBar: AppBar(
         
       ),
-      drawer: Drawer(),
       body: BaseLayout(
         child: Column(
           children: [

@@ -133,7 +133,7 @@ class RegisterPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const forgotPassword()),
+                              builder: (context) => const ForgotPassword()),
                         );
                       },
                       child: const Text(
