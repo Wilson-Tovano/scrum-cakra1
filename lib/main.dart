@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: Provider.of<ThemeProvider>(context).themeData,
+      debugShowCheckedModeBanner: false,
       home: FlutterSplashScreen.fadeIn(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
