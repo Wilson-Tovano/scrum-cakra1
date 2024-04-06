@@ -1,4 +1,4 @@
-import 'package:cakra_asset_management/src/pages/forgot_password/index.dart';
+import 'package:cakra_asset_management/src/pages/login_page/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/layout.dart';
 
@@ -133,7 +133,7 @@ class RegisterPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ForgotPassword()),
+                              builder: (context) => const LoginPage()),
                         );
                       },
                       child: const Text(

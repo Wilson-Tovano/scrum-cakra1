@@ -1,8 +1,7 @@
 import 'package:cakra_asset_management/src/layout.dart';
+import 'package:cakra_asset_management/src/pages/login_page/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
-import 'package:provider/provider.dart';
-import 'package:cakra_asset_management/theme/theme_provider.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -35,7 +34,8 @@ class LandingPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage()),
+                            builder: (context) => const RegisterPage(),
+                          ),
                         );
                       },
                       child: const Text(
@@ -55,11 +55,16 @@ class LandingPage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginPage(),
+                          ),
+                        );
                       },
-                      child:  Text(
+                      child: const Text(
                         'Masuk',
-                        style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
