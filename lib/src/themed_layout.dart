@@ -17,7 +17,7 @@ class ThemedLayout extends StatelessWidget {
       child: Container(
         width: 1080 / pixRatio,
         height: 2280 / pixRatio,
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.background,
         child: child,
       ),
     );
