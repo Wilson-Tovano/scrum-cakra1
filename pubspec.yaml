@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   provider: ^6.1.2
   another_flutter_splash_screen: ^1.2.0
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:
