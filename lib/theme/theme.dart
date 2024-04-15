@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 
 ThemeData darkMode = ThemeData.dark().copyWith(
   appBarTheme: const AppBarTheme(
-    backgroundColor: Color.fromRGBO(93, 0, 195, 1),
+    // backgroundColor: Color.fromRGBO(93, 0, 195, 1),
+    backgroundColor: Colors.black,
   ),
   colorScheme: const ColorScheme.dark(
     background: Color.fromRGBO(11, 22, 35, 1),
     primary: Colors.white,
   ),
   buttonTheme: const ButtonThemeData(
-    buttonColor: Colors.blue,
+    buttonColor: Colors.white
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
       backgroundColor:
-          MaterialStateProperty.all(const Color.fromRGBO(93, 0, 195, 1)),
+          // MaterialStateProperty.all(const Color.fromRGBO(93, 0, 195, 1)),
+          MaterialStateProperty.all(Colors.black),
       shape: const MaterialStatePropertyAll(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20)),

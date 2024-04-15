@@ -1,5 +1,7 @@
+import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
+import 'package:provider/provider.dart';
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
 
@@ -62,6 +64,9 @@ class _TestPageState extends State<TestPage> {
                     );
                   }).toList(),
                 ),
+                TextButton(onPressed: () {
+                   Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                }, child: const Text('change me'))
               ],
             ),
           );
