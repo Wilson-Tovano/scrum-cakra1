@@ -14,7 +14,8 @@ class ItemButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      style: Provider.of<ThemeProvider>(context).themeData.textButtonTheme.style,
+      style:
+          Provider.of<ThemeProvider>(context).themeData.textButtonTheme.style,
       child: Text(text),
     );
   }
@@ -35,6 +36,8 @@ class _ItemInputFormState extends State<ItemInputForm> {
   final itemTypeController = TextEditingController();
   final quantityController = TextEditingController();
   final unitController = TextEditingController();
+  var selectedItemType;
+  var selectedUnitType;
 
   String? validatorCallback(value) {
     if (value == null || value.isEmpty) {
@@ -45,6 +48,7 @@ class _ItemInputFormState extends State<ItemInputForm> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Form(
       key: _formKey,
       child: Column(
@@ -67,12 +71,47 @@ class _ItemInputFormState extends State<ItemInputForm> {
             validator: (validatorCallback),
           ),
           const SizedBox(height: 10),
-          TextFormField(
-            controller: itemTypeController,
+          DropdownButtonFormField<String>(
+            value: selectedItemType,
             decoration: const InputDecoration(
               labelText: 'Item Type',
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                    color: Colors.black), // Customize the underline color
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                    color:
+                        Colors.blue), // Customize the focused underline color
+              ),
+              errorBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                    color: Colors.red), // Customize the error underline color
+              ),
+              errorStyle: TextStyle(
+                  color: Colors.red), // Customize the error text color
+              // errorText: selectedItemType == null || selectedItemType.isEmpty
+              //     ? 'Please select an item type'
+              //     : null,
             ),
-            validator: (validatorCallback),
+            onChanged: (String? newValue) {},
+            items: <String>[
+              'Laptop',
+              'Mobile',
+              'Ya nda tau',
+              // Add more options as needed
+            ].map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please select an item type';
+              }
+              return null;
+            },
           ),
           const SizedBox(height: 10),
           TextFormField(
@@ -83,12 +122,47 @@ class _ItemInputFormState extends State<ItemInputForm> {
             validator: (validatorCallback),
           ),
           const SizedBox(height: 10),
-          TextFormField(
-            controller: unitController,
+          DropdownButtonFormField<String>(
+            value: selectedUnitType,
             decoration: const InputDecoration(
               labelText: 'Unit',
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                    color: Colors.black), // Customize the underline color
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                    color:
+                        Colors.blue), // Customize the focused underline color
+              ),
+              errorBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                    color: Colors.red), // Customize the error underline color
+              ),
+              errorStyle: TextStyle(
+                  color: Colors.red), // Customize the error text color
+              // errorText: selectedItemType == null || selectedItemType.isEmpty
+              //     ? 'Please select an item type'
+              //     : null,
             ),
-            validator: (validatorCallback),
+            onChanged: (String? newValue) {},
+            items: <String>[
+              'Kotak',
+              'Piece',
+              'Roll',
+              // Add more options as needed
+            ].map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please select an Unit';
+              }
+              return null;
+            },
           ),
           const SizedBox(height: 80),
           Row(
@@ -102,12 +176,12 @@ class _ItemInputFormState extends State<ItemInputForm> {
                     if (!_formKey.currentState!.validate()) {
                       return;
                     }
-                          
+
                     bool itemExists = context.select<ItemModel, bool>(
                       (itemList) => itemList.contains(codeController.text),
                     );
                     if (itemExists) return;
-                          
+
                     ItemModel itemList = context.read<ItemModel>();
                     final item = Item(
                       code: codeController.text,
