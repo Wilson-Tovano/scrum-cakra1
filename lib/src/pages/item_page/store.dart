@@ -48,7 +48,6 @@ class _ItemInputFormState extends State<ItemInputForm> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Form(
       key: _formKey,
       child: Column(
@@ -73,32 +72,34 @@ class _ItemInputFormState extends State<ItemInputForm> {
           const SizedBox(height: 10),
           DropdownButtonFormField<String>(
             value: selectedItemType,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: 'Item Type',
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color: Colors.black), // Customize the underline color
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color:
-                        Colors.blue), // Customize the focused underline color
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
-              errorBorder: UnderlineInputBorder(
+              errorBorder: const UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color: Colors.red), // Customize the error underline color
+                  color: Colors.red,
+                ),
               ),
-              errorStyle: TextStyle(
-                  color: Colors.red), // Customize the error text color
-              // errorText: selectedItemType == null || selectedItemType.isEmpty
-              //     ? 'Please select an item type'
-              //     : null,
+              errorStyle: const TextStyle(
+                color: Colors.red,
+              ),
             ),
-            onChanged: (String? newValue) {},
+            onChanged: (String? newValue) {
+              // Add your onChanged logic here
+            },
             items: <String>[
               'Laptop',
               'Mobile',
-              'Ya nda tau',
+              'Yanda tau',
               // Add more options as needed
             ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
@@ -124,32 +125,34 @@ class _ItemInputFormState extends State<ItemInputForm> {
           const SizedBox(height: 10),
           DropdownButtonFormField<String>(
             value: selectedUnitType,
-            decoration: const InputDecoration(
-              labelText: 'Unit',
+            decoration: InputDecoration(
+              labelText: 'Unit Type',
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color: Colors.black), // Customize the underline color
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color:
-                        Colors.blue), // Customize the focused underline color
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
-              errorBorder: UnderlineInputBorder(
+              errorBorder: const UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color: Colors.red), // Customize the error underline color
+                  color: Colors.red,
+                ),
               ),
-              errorStyle: TextStyle(
-                  color: Colors.red), // Customize the error text color
-              // errorText: selectedItemType == null || selectedItemType.isEmpty
-              //     ? 'Please select an item type'
-              //     : null,
+              errorStyle: const TextStyle(
+                color: Colors.red,
+              ),
             ),
-            onChanged: (String? newValue) {},
+            onChanged: (String? newValue) {
+              // Add your onChanged logic here
+            },
             items: <String>[
-              'Kotak',
-              'Piece',
-              'Roll',
+              'Laptop',
+              'Mobile',
+              'Yanda tau',
               // Add more options as needed
             ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
@@ -159,7 +162,7 @@ class _ItemInputFormState extends State<ItemInputForm> {
             }).toList(),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please select an Unit';
+                return 'Please select an item type';
               }
               return null;
             },

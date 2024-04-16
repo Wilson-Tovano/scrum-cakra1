@@ -8,6 +8,7 @@ ThemeData darkMode = ThemeData.dark().copyWith(
   colorScheme: const ColorScheme.dark(
     background: Color.fromRGBO(11, 22, 35, 1),
     primary: Colors.white,
+    secondary: Colors.white,
   ),
   buttonTheme: const ButtonThemeData(
     buttonColor: Colors.white
@@ -44,6 +45,7 @@ ThemeData lightMode = ThemeData.light().copyWith(
   colorScheme: const ColorScheme.light(
     background: Color.fromRGBO(251, 251, 251, 1),
     primary: Colors.blue,
+    secondary: Colors.black,
   ),
   // textButtonTheme: TextButtonThemeData(
   //   style: ButtonStyle(

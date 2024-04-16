@@ -78,25 +78,31 @@ class ForgotPassword extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                      onPressed: () {},
-                      child: const Text("Masuk",
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 244, 144, 1),
-                            decoration: TextDecoration.underline,
-                            decorationColor: Color.fromRGBO(255, 244, 144, 1),
-                          ))),
+                    onPressed: () {},
+                    child: const Text(
+                      "Masuk",
+                      style: TextStyle(
+                        color: Color.fromRGBO(255, 244, 144, 1),
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color.fromRGBO(255, 244, 144, 1),
+                      ),
+                    ),
+                  ),
                   const Text(
                     "atau",
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                      onPressed: () {},
-                      child: const Text("Daftar",
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 244, 144, 1),
-                            decoration: TextDecoration.underline,
-                            decorationColor: Color.fromRGBO(255, 244, 144, 1),
-                          ))),
+                    onPressed: () {},
+                    child: const Text(
+                      "Daftar",
+                      style: TextStyle(
+                        color: Color.fromRGBO(255, 244, 144, 1),
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color.fromRGBO(255, 244, 144, 1),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
