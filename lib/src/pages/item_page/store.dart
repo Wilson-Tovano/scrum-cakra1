@@ -1,27 +1,9 @@
 import 'package:cakra_asset_management/src/models/item_model.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
-import 'package:cakra_asset_management/theme/theme_provider.dart';
+import 'package:cakra_asset_management/src/widgets/alert_dialog_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ItemButton extends StatelessWidget {
-  final VoidCallback onPressed;
-  final String text;
-
-  const ItemButton({super.key, required this.text, required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      style:
-          Provider.of<ThemeProvider>(context).themeData.textButtonTheme.style,
-      child: Text(text),
-    );
-  }
-}
-
-// TODO: Move to new component
 class ItemInputForm extends StatefulWidget {
   const ItemInputForm({super.key});
 
@@ -33,11 +15,9 @@ class _ItemInputFormState extends State<ItemInputForm> {
   final _formKey = GlobalKey<FormState>();
   final codeController = TextEditingController();
   final nameController = TextEditingController();
-  final itemTypeController = TextEditingController();
   final quantityController = TextEditingController();
-  final unitController = TextEditingController();
-  var selectedItemType;
-  var selectedUnitType;
+  ItemType? selectedItemType;
+  ItemUnit? selectedItemUnit;
 
   String? validatorCallback(value) {
     if (value == null || value.isEmpty) {
@@ -46,8 +26,38 @@ class _ItemInputFormState extends State<ItemInputForm> {
     return null;
   }
 
+  String? dropdownValidatorCallback(value) {
+    if (value == null) {
+      return 'Please select an option';
+    }
+    return null;
+  }
+
+  String? numberValidatorCallback(value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter a value';
+    }
+    final n = int.tryParse(value);
+    if (n == null) {
+      return 'Please enter a valid number';
+    }
+    return null;
+  }
+
+  void clearForm() {
+    _formKey.currentState?.reset();
+    codeController.clear();
+    nameController.clear();
+    quantityController.clear();
+    selectedItemType = null;
+    selectedItemUnit = null;
+  }
+
   @override
   Widget build(BuildContext context) {
+    bool itemExists = context.select<ItemModel, bool>(
+      (itemList) => itemList.contains(codeController.text),
+    );
     return Form(
       key: _formKey,
       child: Column(
@@ -70,7 +80,7 @@ class _ItemInputFormState extends State<ItemInputForm> {
             validator: (validatorCallback),
           ),
           const SizedBox(height: 10),
-          DropdownButtonFormField<String>(
+          DropdownButtonFormField<ItemType?>(
             value: selectedItemType,
             decoration: InputDecoration(
               labelText: 'Item Type',
@@ -93,26 +103,20 @@ class _ItemInputFormState extends State<ItemInputForm> {
                 color: Colors.red,
               ),
             ),
-            onChanged: (String? newValue) {
-              // Add your onChanged logic here
+            onChanged: (ItemType? newValue) {
+              setState(() {
+                selectedItemType = newValue;
+              });
             },
-            items: <String>[
-              'Laptop',
-              'Mobile',
-              'Yanda tau',
-              // Add more options as needed
-            ].map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
+            items: ItemType.values
+                .map<DropdownMenuItem<ItemType>>((ItemType value) {
+              return DropdownMenuItem<ItemType>(
                 value: value,
-                child: Text(value),
+                child:
+                    Text(value.name[0].toUpperCase() + value.name.substring(1)),
               );
             }).toList(),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please select an item type';
-              }
-              return null;
-            },
+            validator: (dropdownValidatorCallback),
           ),
           const SizedBox(height: 10),
           TextFormField(
@@ -120,11 +124,11 @@ class _ItemInputFormState extends State<ItemInputForm> {
             decoration: const InputDecoration(
               labelText: 'Quantity',
             ),
-            validator: (validatorCallback),
+            validator: (numberValidatorCallback),
           ),
           const SizedBox(height: 10),
-          DropdownButtonFormField<String>(
-            value: selectedUnitType,
+          DropdownButtonFormField<ItemUnit?>(
+            value: selectedItemUnit,
             decoration: InputDecoration(
               labelText: 'Unit Type',
               enabledBorder: UnderlineInputBorder(
@@ -146,26 +150,20 @@ class _ItemInputFormState extends State<ItemInputForm> {
                 color: Colors.red,
               ),
             ),
-            onChanged: (String? newValue) {
-              // Add your onChanged logic here
+            onChanged: (ItemUnit? newValue) {
+              setState(() {
+                selectedItemUnit = newValue;
+              });
             },
-            items: <String>[
-              'Laptop',
-              'Mobile',
-              'Yanda tau',
-              // Add more options as needed
-            ].map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
+            items: ItemUnit.values
+                .map<DropdownMenuItem<ItemUnit>>((ItemUnit value) {
+              return DropdownMenuItem<ItemUnit>(
                 value: value,
-                child: Text(value),
+                child:
+                    Text(value.name[0].toUpperCase() + value.name.substring(1)),
               );
             }).toList(),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please select an item type';
-              }
-              return null;
-            },
+            validator: (dropdownValidatorCallback),
           ),
           const SizedBox(height: 80),
           Row(
@@ -173,36 +171,40 @@ class _ItemInputFormState extends State<ItemInputForm> {
             children: [
               SizedBox(
                 width: 120,
-                child: ItemButton(
-                  text: 'Simpan',
+                child: TextButton(
                   onPressed: () {
                     if (!_formKey.currentState!.validate()) {
                       return;
                     }
-
-                    bool itemExists = context.select<ItemModel, bool>(
-                      (itemList) => itemList.contains(codeController.text),
-                    );
                     if (itemExists) return;
 
                     ItemModel itemList = context.read<ItemModel>();
                     final item = Item(
                       code: codeController.text,
                       name: nameController.text,
-                      itemType: itemTypeController.text,
+                      itemType: selectedItemType!,
                       quantity: int.parse(quantityController.text),
-                      unit: unitController.text,
+                      itemUnit: selectedItemUnit!,
                     );
                     itemList.add(item);
+                    clearForm();
+                    showDialog(
+                      context: context,
+                      builder: (context) => const BlurryDialog(
+                        title: 'Success',
+                        content: 'Item has been successfully added',
+                      ),
+                    );
                   },
+                  child: const Text('Simpan'),
                 ),
               ),
               SizedBox(
                 width: 120,
-                child: ItemButton(
-                  text: 'Reset',
+                child: TextButton(
+                  child: const Text('Reset'),
                   onPressed: () {
-                    _formKey.currentState?.reset();
+                    clearForm();
                   },
                 ),
               ),
@@ -217,9 +219,7 @@ class _ItemInputFormState extends State<ItemInputForm> {
   void dispose() {
     codeController.dispose();
     nameController.dispose();
-    itemTypeController.dispose();
     quantityController.dispose();
-    unitController.dispose();
     super.dispose();
   }
 }

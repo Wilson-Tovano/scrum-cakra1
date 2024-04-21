@@ -1,6 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
+enum ItemType { mobil, makanan, minuman }
+enum ItemUnit { liter, kilogram, pcs }
+
 @immutable
 class Item {
   const Item({
@@ -8,13 +11,13 @@ class Item {
     required this.name,
     required this.itemType,
     required this.quantity,
-    required this.unit,
+    required this.itemUnit,
   });
   final String code;
   final String name;
-  final String itemType;
+  final ItemType itemType;
   final int quantity;
-  final String unit;
+  final ItemUnit itemUnit;
 }
 
 class ItemModel extends ChangeNotifier {
