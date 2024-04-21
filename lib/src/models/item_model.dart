@@ -40,5 +40,7 @@ class ItemModel extends ChangeNotifier {
     return _items.any((element) => element.code.toLowerCase() == key.toLowerCase());
   }
 
+  Map<ItemType, List<Item>> get groupedItems => groupBy(_items, (Item item) => item.itemType);
+
   List<Item> get items => _items;
 }

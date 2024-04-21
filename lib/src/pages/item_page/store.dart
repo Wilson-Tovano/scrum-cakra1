@@ -1,3 +1,4 @@
+import 'package:cakra_asset_management/src/helpers/string_helper.dart';
 import 'package:cakra_asset_management/src/models/item_model.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:cakra_asset_management/src/widgets/alert_dialog_widget.dart';
@@ -112,8 +113,7 @@ class _ItemInputFormState extends State<ItemInputForm> {
                 .map<DropdownMenuItem<ItemType>>((ItemType value) {
               return DropdownMenuItem<ItemType>(
                 value: value,
-                child:
-                    Text(value.name[0].toUpperCase() + value.name.substring(1)),
+                child: Text(capitalize(value.name)),
               );
             }).toList(),
             validator: (dropdownValidatorCallback),
@@ -155,14 +155,14 @@ class _ItemInputFormState extends State<ItemInputForm> {
                 selectedItemUnit = newValue;
               });
             },
-            items: ItemUnit.values
-                .map<DropdownMenuItem<ItemUnit>>((ItemUnit value) {
-              return DropdownMenuItem<ItemUnit>(
-                value: value,
-                child:
-                    Text(value.name[0].toUpperCase() + value.name.substring(1)),
-              );
-            }).toList(),
+            items: ItemUnit.values.map<DropdownMenuItem<ItemUnit>>(
+              (ItemUnit value) {
+                return DropdownMenuItem<ItemUnit>(
+                  value: value,
+                  child: Text(capitalize(value.name)),
+                );
+              },
+            ).toList(),
             validator: (dropdownValidatorCallback),
           ),
           const SizedBox(height: 80),
