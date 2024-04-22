@@ -1,4 +1,5 @@
 import 'package:cakra_asset_management/src/layout.dart';
+import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
 import 'package:cakra_asset_management/src/pages/forgot_password/index.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +86,12 @@ class LoginPage extends StatelessWidget {
                         ),
                         onPressed: () {
                           // TODO: Dashboard page
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
+                              ),
+                            );
                         },
                         child: const Text(
                           "Masuk",
