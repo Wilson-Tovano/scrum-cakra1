@@ -1,5 +1,7 @@
 import 'package:cakra_asset_management/src/layout.dart';
+import 'package:cakra_asset_management/src/pages/item_page/index.dart';
 import 'package:cakra_asset_management/src/pages/login_page/index.dart';
+import 'package:cakra_asset_management/src/pages/test_page/test_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
 
@@ -71,6 +73,28 @@ class LandingPage extends StatelessWidget {
                 ),
               ],
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const IndexItemPage(),
+                  ),
+                );
+              },
+              child: const Text('Go to Index item page'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TestPage(),
+                  ),
+                );
+              },
+              child: const Text('Go to store test page'),
+            )
           ],
         ),
       ),
