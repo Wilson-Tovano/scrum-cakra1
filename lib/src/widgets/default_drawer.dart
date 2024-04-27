@@ -1,4 +1,5 @@
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
+import 'package:cakra_asset_management/src/pages/profile/index.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +41,7 @@ class DefaultDrawer extends StatelessWidget {
                 children: [
                   ListTile(
                     title: const Text(
-                      'Tile',
+                      'Halaman Awal',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -50,7 +51,18 @@ class DefaultDrawer extends StatelessWidget {
                   ),
                   ListTile(
                     title: const Text(
-                      'Tile',
+                      'Profil',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                    },
+                  ),
+                  ListTile(
+                    title: const Text(
+                      'Form Permintaan',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -60,7 +72,7 @@ class DefaultDrawer extends StatelessWidget {
                   ),
                   ListTile(
                     title: const Text(
-                      'Tile',
+                      'Form Persetujuan',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -70,7 +82,7 @@ class DefaultDrawer extends StatelessWidget {
                   ),
                   ListTile(
                     title: const Text(
-                      'Tile',
+                      'Item ATK',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -82,6 +94,17 @@ class DefaultDrawer extends StatelessWidget {
               ),
             ),
             const Divider(),
+            ListTile(
+              title: const Text('Kontak'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Profile(),
+                  ),
+                );
+              },
+            ),
             ListTile(
               title: const Text('Keluar'),
               onTap: () {
