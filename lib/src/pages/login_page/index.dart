@@ -85,7 +85,6 @@ class LoginPage extends StatelessWidget {
                               const Color.fromRGBO(255, 244, 144, 1),
                         ),
                         onPressed: () {
-                          // TODO: Dashboard page
                           Navigator.push(
                               context,
                               MaterialPageRoute(

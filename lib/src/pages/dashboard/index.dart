@@ -1,5 +1,4 @@
 import 'package:cakra_asset_management/src/themed_layout.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:cakra_asset_management/src/layout.dart';
 
@@ -10,9 +9,9 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('kotnotol'),
+        title: const Text('Dashboard'),
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: ThemedLayout(
         child: Column(
           children: [
@@ -46,12 +45,12 @@ class Dashboard extends StatelessWidget {
                       height: 100.0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.abc_rounded),
+                        icon: const Icon(Icons.abc_rounded),
                         iconSize:
                             50.0, // Adjust the size as per your requirement
                       ),
                     ),
-                    Text('Persediaan')
+                    const Text('Persediaan')
                   ],
                 ),
                 Column(
@@ -61,12 +60,12 @@ class Dashboard extends StatelessWidget {
                       height: 100.0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.abc_rounded),
+                        icon: const Icon(Icons.abc_rounded),
                         iconSize:
                             50.0, // Adjust the size as per your requirement
                       ),
                     ),
-                    Text('Tambah Item')
+                    const Text('Tambah Item')
                   ],
                 ),
                 Column(
@@ -76,17 +75,17 @@ class Dashboard extends StatelessWidget {
                       height: 100.0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.abc_rounded),
+                        icon: const Icon(Icons.abc_rounded),
                         iconSize:
                             50.0, // Adjust the size as per your requirement
                       ),
                     ),
-                    Text('Permintaan/\n Pertusujuan')
+                    const Text('Permintaan/\n Persetujuan')
                   ],
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
@@ -99,12 +98,12 @@ class Dashboard extends StatelessWidget {
                       height: 100.0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.abc_rounded),
+                        icon: const Icon(Icons.abc_rounded),
                         iconSize:
                             50.0, // Adjust the size as per your requirement
                       ),
                     ),
-                    Text('PEngambilan')
+                    const Text('PEngambilan')
                   ],
                 ),
                 Column(
@@ -114,12 +113,12 @@ class Dashboard extends StatelessWidget {
                       height: 100.0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.abc_rounded),
+                        icon: const Icon(Icons.abc_rounded),
                         iconSize:
                             50.0, // Adjust the size as per your requirement
                       ),
                     ),
-                    Text('Detail')
+                    const Text('Detail')
                   ],
                 ),
                 Column(
@@ -129,12 +128,12 @@ class Dashboard extends StatelessWidget {
                       height: 100.0,
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.abc_rounded),
+                        icon: const Icon(Icons.abc_rounded),
                         iconSize:
                             50.0, // Adjust the size as per your requirement
                       ),
                     ),
-                    Text('Laporan')
+                    const Text('Laporan')
                   ],
                 ),
               ],
