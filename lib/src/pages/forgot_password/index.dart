@@ -13,7 +13,7 @@ class ForgotPassword extends StatelessWidget {
             const FractionallySizedBox(
               widthFactor: 0.6,
               child: Image(
-                image: AssetImage("assets/logo-white.png"),
+                image: AssetImage("assets/main-logo-white.png"),
                 width: 250,
                 height: 250,
               ),

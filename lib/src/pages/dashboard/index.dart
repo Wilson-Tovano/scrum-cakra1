@@ -1,5 +1,8 @@
 import 'package:cakra_asset_management/src/themed_layout.dart';
+import 'package:cakra_asset_management/src/widgets/default_drawer.dart';
+import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 // import 'package:cakra_asset_management/src/layout.dart';
 
 class Dashboard extends StatelessWidget {
@@ -11,12 +14,12 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dashboard'),
       ),
-      drawer: const Drawer(),
+      drawer: const DefaultDrawer(),
       body: ThemedLayout(
         child: Column(
           children: [
-            const Image(
-              image: AssetImage("assets/logo-black.png"),
+            Image(
+              image: Provider.of<ThemeProvider>(context).themeData.brightness == Brightness.light ? const AssetImage("assets/main-logo-dark.png") : const AssetImage("assets/main-logo-white.png"),
               width: 250,
               height: 150,
             ),
@@ -25,7 +28,6 @@ class Dashboard extends StatelessWidget {
               style: TextStyle(
                 // fontWeight: FontWeight.bold,
                 fontSize: 24,
-                color: Colors.black,
               ),
             ),
             const Padding(
