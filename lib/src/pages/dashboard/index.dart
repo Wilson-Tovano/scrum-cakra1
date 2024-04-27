@@ -12,23 +12,23 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: const Text('Aplikasi Data BMN'),
       ),
       drawer: const DefaultDrawer(),
       body: ThemedLayout(
         child: Column(
           children: [
             Image(
-              image: Provider.of<ThemeProvider>(context).themeData.brightness == Brightness.light ? const AssetImage("assets/main-logo-dark.png") : const AssetImage("assets/main-logo-white.png"),
+              image: Provider.of<ThemeProvider>(context).themeData.brightness ==
+                      Brightness.light
+                  ? const AssetImage("assets/main-logo-dark.png")
+                  : const AssetImage("assets/main-logo-white.png"),
               width: 250,
               height: 150,
             ),
             const Text(
-              "Menu Data BDM",
-              style: TextStyle(
-                // fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
+              "Menu Data BMN",
+              style: TextStyle(fontSize: 24),
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
@@ -45,14 +45,21 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       width: 100.0,
                       height: 100.0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.abc_rounded),
-                        iconSize:
-                            50.0, // Adjust the size as per your requirement
+                      child: Container(
+                        margin: const EdgeInsets.all(15.0),
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.bar_chart),
+                            iconSize: 50.0,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text('Persediaan')
+                    const Text(
+                      'Persediaan',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Column(
@@ -60,14 +67,21 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       width: 100.0,
                       height: 100.0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.abc_rounded),
-                        iconSize:
-                            50.0, // Adjust the size as per your requirement
+                      child: Container(
+                        margin: const EdgeInsets.all(15.0),
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.add_to_queue),
+                            iconSize: 50.0,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text('Tambah Item')
+                    const Text(
+                      'Tambah Item',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Column(
@@ -75,14 +89,21 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       width: 100.0,
                       height: 100.0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.abc_rounded),
-                        iconSize:
-                            50.0, // Adjust the size as per your requirement
+                      child: Container(
+                        margin: const EdgeInsets.all(15.0),
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.handshake),
+                            iconSize: 50.0,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text('Permintaan/\n Persetujuan')
+                    const Text(
+                      'Permintaan/\nPersetujuan',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ],
@@ -91,6 +112,7 @@ class Dashboard extends StatelessWidget {
               height: 50,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
@@ -98,14 +120,21 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       width: 100.0,
                       height: 100.0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.abc_rounded),
-                        iconSize:
-                            50.0, // Adjust the size as per your requirement
+                      child: Container(
+                        margin: const EdgeInsets.all(15.0),
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.pin_drop),
+                            iconSize: 50.0,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text('PEngambilan')
+                    const Text(
+                      'Pengambilan',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Column(
@@ -113,14 +142,21 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       width: 100.0,
                       height: 100.0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.abc_rounded),
-                        iconSize:
-                            50.0, // Adjust the size as per your requirement
+                      child: Container(
+                        margin: const EdgeInsets.all(15.0),
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.format_list_bulleted),
+                            iconSize: 50.0,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text('Detail')
+                    const Text(
+                      'Detail',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Column(
@@ -128,18 +164,25 @@ class Dashboard extends StatelessWidget {
                     SizedBox(
                       width: 100.0,
                       height: 100.0,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.abc_rounded),
-                        iconSize:
-                            50.0, // Adjust the size as per your requirement
+                      child: Container(
+                        margin: const EdgeInsets.all(15.0),
+                        child: CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.assignment),
+                            iconSize: 50.0,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text('Laporan')
+                    const Text(
+                      'Laporan',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
@@ -147,7 +190,7 @@ class Dashboard extends StatelessWidget {
         // backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
         tooltip: 'Increment',
         onPressed: () {},
-        child: const Icon(Icons.add, color: Colors.white, size: 28),
+        child: const Icon(Icons.qr_code_scanner, color: Colors.white, size: 28),
       ),
     );
   }
