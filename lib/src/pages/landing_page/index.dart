@@ -1,6 +1,6 @@
 import 'package:cakra_asset_management/src/layout.dart';
 import 'package:cakra_asset_management/src/pages/item_page/index.dart';
-import 'package:cakra_asset_management/src/pages/login_page/index.dart';
+import 'package:cakra_asset_management/src/pages/login/index.dart';
 import 'package:cakra_asset_management/src/pages/test_page/test_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
