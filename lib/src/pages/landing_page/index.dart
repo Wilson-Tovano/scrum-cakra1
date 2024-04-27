@@ -16,7 +16,7 @@ class LandingPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Image(
-              image: AssetImage("assets/logo-white.png"),
+              image: AssetImage("assets/main-logo-white.png"),
               width: 250,
               height: 250,
             ),
