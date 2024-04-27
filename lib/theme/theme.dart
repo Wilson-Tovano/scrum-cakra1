@@ -7,6 +7,7 @@ ThemeData darkMode = ThemeData.dark().copyWith(
   colorScheme: const ColorScheme.dark(
     background: Color.fromRGBO(11, 22, 35, 1),
     primary: Color(0xFF5D00C3),
+    onPrimary: Colors.white,
     secondary: Color(0xFF2F353D),
   ),
   textTheme: Typography.whiteMountainView,
