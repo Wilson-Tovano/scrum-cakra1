@@ -57,8 +57,7 @@ class DefaultDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: () {
-                    },
+                    onTap: () {},
                   ),
                   ListTile(
                     title: const Text(
@@ -100,10 +99,16 @@ class DefaultDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Profile(),
+                    builder: (context) => const ProfilePage(),
                   ),
                 );
               },
+              leading: const Icon(Icons.person),
+              titleTextStyle: const TextStyle(
+                color: Colors.blue,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             ListTile(
               title: const Text('Keluar'),
@@ -118,7 +123,10 @@ class DefaultDrawer extends StatelessWidget {
               },
               leading: const Icon(Icons.logout),
               titleTextStyle: const TextStyle(
-                  color: Colors.red, fontSize: 16, fontWeight: FontWeight.bold),
+                color: Colors.red,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),

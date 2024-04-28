@@ -1,13 +1,12 @@
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:cakra_asset_management/src/widgets/barcode_scanner_zoom.dart';
-import 'package:cakra_asset_management/src/widgets/default_drawer.dart';
+import 'package:cakra_asset_management/src/widgets/default_drawer_widget.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:cakra_asset_management/src/layout.dart';
 
-class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +188,7 @@ class Dashboard extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         // backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
-        tooltip: 'Increment',
+        tooltip: 'Qr Scan',
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => const BarcodeScannerZoom()));
         },

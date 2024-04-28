@@ -1,5 +1,5 @@
 import 'package:cakra_asset_management/src/layout.dart';
-import 'package:cakra_asset_management/src/pages/item_page/index.dart';
+import 'package:cakra_asset_management/src/pages/item/index.dart';
 import 'package:cakra_asset_management/src/pages/login/index.dart';
 import 'package:cakra_asset_management/src/pages/test_page/test_page.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +33,7 @@ class LandingPage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const RegisterPage(),
@@ -57,7 +57,7 @@ class LandingPage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const LoginPage(),
@@ -75,6 +75,7 @@ class LandingPage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
+                // TODO: Temporary routing
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -86,6 +87,7 @@ class LandingPage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
+                // TODO: Temporary routing
                 Navigator.push(
                   context,
                   MaterialPageRoute(
