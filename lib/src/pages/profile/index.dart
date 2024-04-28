@@ -1,9 +1,6 @@
 import 'package:cakra_asset_management/src/pages/edit_profile/index.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 // import 'package:cakra_asset_management/src/layout.dart';
 
 class Profile extends StatelessWidget {
@@ -16,19 +13,18 @@ class Profile extends StatelessWidget {
         title: const Text('Aplikasi Data BMN'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
-              Icons
-                  .settings, // Replace 'Icons.add' with the icon you want to use
+            icon: const Icon(
+              Icons.settings,
               color: Colors.white, // Customize the color if needed
             ),
             onPressed: () {
               // Add your action here
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const EditProfile(),
-                  ),
-                );
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditProfile(),
+                ),
+              );
             },
           ),
         ],
@@ -57,7 +53,7 @@ class Profile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -72,7 +68,7 @@ class Profile extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               10), // Adjust the value as needed
                         ),
-                        child: Row(
+                        child: const Row(
                           children: [
                             Expanded(
                               child: Icon(
@@ -98,9 +94,9 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         "+62 895 3384 20642",
                         style: TextStyle(
@@ -114,7 +110,7 @@ class Profile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -129,7 +125,7 @@ class Profile extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               10), // Adjust the value as needed
                         ),
-                        child: Row(
+                        child: const Row(
                           children: [
                             Expanded(
                               child: Icon(
@@ -155,9 +151,9 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         "@andylauox",
                         style: TextStyle(
@@ -171,7 +167,7 @@ class Profile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -186,7 +182,7 @@ class Profile extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               10), // Adjust the value as needed
                         ),
-                        child: Row(
+                        child: const Row(
                           children: [
                             Expanded(
                               child: Icon(
@@ -212,9 +208,9 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         "@刘德华",
                         style: TextStyle(

@@ -1,9 +1,5 @@
 import 'package:cakra_asset_management/src/themed_layout.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 // import 'package:cakra_asset_management/src/layout.dart';
 
 class EditProfile extends StatefulWidget {
@@ -22,6 +18,7 @@ class _EditProfileState extends State<EditProfile> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -51,7 +48,7 @@ class _EditProfileState extends State<EditProfile> {
                       24, // You can add more text decorations here, such as color, size, etc.
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -59,11 +56,11 @@ class _EditProfileState extends State<EditProfile> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(
+                      padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 20, vertical: 5),
                       child: Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             child: Icon(Icons.person),
                           ),
                           Expanded(
@@ -80,7 +77,7 @@ class _EditProfileState extends State<EditProfile> {
                                   width: 1.0, // Border width
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 decoration: InputDecoration(
                                   hintText: 'Nama baru', // Hint text
                                   border: InputBorder
@@ -103,11 +100,11 @@ class _EditProfileState extends State<EditProfile> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(
+                      padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 20, vertical: 5),
                       child: Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             child: Icon(Icons.email),
                           ),
                           Expanded(
@@ -124,7 +121,7 @@ class _EditProfileState extends State<EditProfile> {
                                   width: 1.0, // Border width
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 decoration: InputDecoration(
                                   hintText: 'Email baru', // Hint text
                                   border: InputBorder
@@ -147,11 +144,11 @@ class _EditProfileState extends State<EditProfile> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(
+                      padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 20, vertical: 5),
                       child: Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             child: Icon(Icons.lock),
                           ),
                           Expanded(
@@ -170,7 +167,7 @@ class _EditProfileState extends State<EditProfile> {
                                 decoration: InputDecoration(
                                   hintText: 'Kata sandi lama',
                                   border: InputBorder.none,
-                                  contentPadding: EdgeInsets.symmetric(
+                                  contentPadding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 10),
                                   suffixIcon: IconButton(
                                     icon: Icon(
@@ -196,7 +193,7 @@ class _EditProfileState extends State<EditProfile> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(
+                      padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 20, vertical: 5),
                       child: Row(
                         children: [
@@ -217,7 +214,7 @@ class _EditProfileState extends State<EditProfile> {
                                 decoration: InputDecoration(
                                   hintText: 'Kata sandi baru',
                                   border: InputBorder.none,
-                                  contentPadding: EdgeInsets.symmetric(
+                                  contentPadding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 10),
                                   suffixIcon: IconButton(
                                     icon: Icon(
@@ -243,7 +240,7 @@ class _EditProfileState extends State<EditProfile> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(
+                      padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 20, vertical: 5),
                       child: Row(
                         children: [
@@ -264,7 +261,7 @@ class _EditProfileState extends State<EditProfile> {
                                 decoration: InputDecoration(
                                   hintText: 'Ulangi kata sandi baru',
                                   border: InputBorder.none,
-                                  contentPadding: EdgeInsets.symmetric(
+                                  contentPadding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 10),
                                   suffixIcon: IconButton(
                                     icon: Icon(
@@ -285,7 +282,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
               Padding(
@@ -298,7 +295,7 @@ class _EditProfileState extends State<EditProfile> {
                     borderRadius:
                         BorderRadius.circular(10), // Adjust the value as needed
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Simpan Perubahan",
                       style: TextStyle(
