@@ -1,15 +1,14 @@
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:flutter/material.dart';
-// import 'package:cakra_asset_management/src/layout.dart';
 
-class EditProfile extends StatefulWidget {
-  const EditProfile({super.key});
+class EditProfilePage extends StatefulWidget {
+  const EditProfilePage({super.key});
 
   @override
-  State<EditProfile> createState() => _EditProfileState();
+  State<EditProfilePage> createState() => _EditProfilePageState();
 }
 
-class _EditProfileState extends State<EditProfile> {
+class _EditProfilePageState extends State<EditProfilePage> {
   bool _obscureText = true; // Initially hide the text
 
   void togglePasswordVisibility() {
@@ -22,21 +21,20 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Aplikasi Data BMN'),
+        title: const Text('Edit Akun'),
       ),
       body: ThemedLayout(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
+              const Padding(
+                padding: EdgeInsets.all(20),
+                child: SizedBox(
                   height: 120,
                   width: 120,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
-                    borderRadius:
-                        BorderRadius.circular(60), // Adjust the value as needed
+                  child: CircleAvatar(
+                    backgroundImage:
+                        AssetImage("assets/contact-placeholder.jpg"),
                   ),
                 ),
               ),
@@ -44,8 +42,7 @@ class _EditProfileState extends State<EditProfile> {
                 "Andy Lau",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize:
-                      24, // You can add more text decorations here, such as color, size, etc.
+                  fontSize: 24,
                 ),
               ),
               const SizedBox(
@@ -67,8 +64,7 @@ class _EditProfileState extends State<EditProfile> {
                             flex: 5,
                             child: Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    10), // Adjust the value as needed
+                                borderRadius: BorderRadius.circular(10),
                                 // Background color of the container
                                 border: Border.all(
                                   color: Theme.of(context)
@@ -80,11 +76,9 @@ class _EditProfileState extends State<EditProfile> {
                               child: const TextField(
                                 decoration: InputDecoration(
                                   hintText: 'Nama baru', // Hint text
-                                  border: InputBorder
-                                      .none, // Removes the default underline border
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal:
-                                          10), // Optional: Adjusts the padding
+                                  border: InputBorder.none,
+                                  contentPadding:
+                                      EdgeInsets.symmetric(horizontal: 10),
                                 ),
                               ),
                             ),
@@ -111,8 +105,7 @@ class _EditProfileState extends State<EditProfile> {
                             flex: 5,
                             child: Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    10), // Adjust the value as needed
+                                borderRadius: BorderRadius.circular(10),
                                 // Background color of the container
                                 border: Border.all(
                                   color: Theme.of(context)
@@ -126,9 +119,8 @@ class _EditProfileState extends State<EditProfile> {
                                   hintText: 'Email baru', // Hint text
                                   border: InputBorder
                                       .none, // Removes the default underline border
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal:
-                                          10), // Optional: Adjusts the padding
+                                  contentPadding:
+                                      EdgeInsets.symmetric(horizontal: 10),
                                 ),
                               ),
                             ),
@@ -163,7 +155,7 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                               ),
                               child: TextField(
-                                obscureText: true, // Hide text by default
+                                obscureText: _obscureText,
                                 decoration: InputDecoration(
                                   hintText: 'Kata sandi lama',
                                   border: InputBorder.none,
@@ -210,7 +202,7 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                               ),
                               child: TextField(
-                                obscureText: true, // Hide text by default
+                                obscureText: _obscureText,
                                 decoration: InputDecoration(
                                   hintText: 'Kata sandi baru',
                                   border: InputBorder.none,
@@ -257,7 +249,7 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                               ),
                               child: TextField(
-                                obscureText: true, // Hide text by default
+                                obscureText: _obscureText,
                                 decoration: InputDecoration(
                                   hintText: 'Ulangi kata sandi baru',
                                   border: InputBorder.none,
@@ -301,11 +293,9 @@ class _EditProfileState extends State<EditProfile> {
                       style: TextStyle(
                         // fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize:
-                            16, // You can add more text decorations here, such as color, size, etc.
+                        fontSize: 16,
                       ),
-                      textAlign:
-                          TextAlign.center, // Align text to center horizontally
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),

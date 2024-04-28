@@ -85,12 +85,13 @@ class LoginPage extends StatelessWidget {
                               const Color.fromRGBO(255, 244, 144, 1),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Dashboard(),
-                              ),
-                            );
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DashboardPage(),
+                            ),
+                            (Route<dynamic> route) => false,
+                          );
                         },
                         child: const Text(
                           "Masuk",
@@ -107,7 +108,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const RegisterPage(),
@@ -141,7 +142,7 @@ class LoginPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ForgotPassword(),
+                            builder: (context) => const ForgotPasswordPage(),
                           ),
                         );
                       },
