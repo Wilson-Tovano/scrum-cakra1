@@ -1,4 +1,5 @@
 import 'package:cakra_asset_management/src/themed_layout.dart';
+import 'package:cakra_asset_management/src/widgets/barcode_scanner_zoom.dart';
 import 'package:cakra_asset_management/src/widgets/default_drawer.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -189,7 +190,9 @@ class Dashboard extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         // backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
         tooltip: 'Increment',
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const BarcodeScannerZoom()));
+        },
         child: const Icon(Icons.qr_code_scanner, color: Colors.white, size: 28),
       ),
     );
