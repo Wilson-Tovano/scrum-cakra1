@@ -1,3 +1,5 @@
+import 'package:cakra_asset_management/src/pages/item/index.dart';
+import 'package:cakra_asset_management/src/pages/item/store.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:cakra_asset_management/src/widgets/barcode_scanner_zoom.dart';
 import 'package:cakra_asset_management/src/widgets/default_drawer_widget.dart';
@@ -60,7 +62,14 @@ class DashboardPage extends StatelessWidget {
                         margin: const EdgeInsets.all(15.0),
                         child: CircleAvatar(
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const IndexItemPage(),
+                                ),
+                              );
+                            },
                             icon: const Icon(Icons.bar_chart),
                             iconSize: 50.0,
                           ),
@@ -82,7 +91,14 @@ class DashboardPage extends StatelessWidget {
                         margin: const EdgeInsets.all(15.0),
                         child: CircleAvatar(
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const StoreItemPage(),
+                                ),
+                              );
+                            },
                             icon: const Icon(Icons.add_to_queue),
                             iconSize: 50.0,
                           ),
