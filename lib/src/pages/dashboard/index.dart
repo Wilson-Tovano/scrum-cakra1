@@ -13,6 +13,17 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Aplikasi Data BMN'),
+        actions: [
+          IconButton(
+            icon: Provider.of<ThemeProvider>(context).themeData.brightness ==
+                    Brightness.light
+                ? const Icon(Icons.dark_mode)
+                : const Icon(Icons.light_mode),
+            onPressed: () {
+              Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+            },
+          ),
+        ],
       ),
       drawer: const DefaultDrawer(),
       body: ThemedLayout(
@@ -190,7 +201,10 @@ class DashboardPage extends StatelessWidget {
         // backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
         tooltip: 'Qr Scan',
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const BarcodeScannerZoom()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const BarcodeScannerZoom()));
         },
         child: const Icon(Icons.qr_code_scanner, color: Colors.white, size: 28),
       ),
