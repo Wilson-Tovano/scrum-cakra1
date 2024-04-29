@@ -1,3 +1,5 @@
+import 'package:cakra_asset_management/src/pages/login/index.dart';
+import 'package:cakra_asset_management/src/pages/register/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/layout.dart';
 
@@ -78,7 +80,14 @@ class ForgotPasswordPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       "Masuk",
                       style: TextStyle(
@@ -93,7 +102,14 @@ class ForgotPasswordPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterPage(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       "Daftar",
                       style: TextStyle(
