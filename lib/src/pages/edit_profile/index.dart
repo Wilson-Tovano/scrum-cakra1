@@ -279,23 +279,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 180,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    borderRadius:
-                        BorderRadius.circular(10), // Adjust the value as needed
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Simpan Perubahan",
-                      style: TextStyle(
-                        // fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: 180,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Simpan Perubahan",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
