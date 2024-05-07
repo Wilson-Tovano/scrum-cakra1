@@ -1,6 +1,6 @@
 import 'package:cakra_asset_management/src/pages/item/index.dart';
 import 'package:cakra_asset_management/src/pages/item/store.dart';
-import 'package:cakra_asset_management/src/pages/permintaan_page/index.dart';
+import 'package:cakra_asset_management/src/pages/request_item/index.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:cakra_asset_management/src/widgets/barcode_scanner_zoom.dart';
 import 'package:cakra_asset_management/src/widgets/default_drawer_widget.dart';
@@ -114,7 +114,7 @@ class DashboardPage extends StatelessWidget {
                             onPressed: () {Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const PermintaanPage(),
+                                  builder: (context) => const RequestItemIndexPage(),
                                 ),
                               );},
                             icon: const Icon(Icons.handshake),

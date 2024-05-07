@@ -1,5 +1,6 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:cakra_asset_management/src/models/item_model.dart';
+import 'package:cakra_asset_management/src/models/request_item_model.dart';
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
@@ -14,6 +15,9 @@ void main() {
       ChangeNotifierProvider(
         create: (context) => ItemModel(),
       ),
+      ChangeNotifierProvider(
+        create: (context) => RequestItemModel(),
+      )
     ],
     child: const MyApp(),
   ));
