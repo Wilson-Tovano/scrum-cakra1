@@ -1,5 +1,6 @@
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:cakra_asset_management/src/pages/profile/index.dart';
+import 'package:cakra_asset_management/theme/theme.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -88,6 +89,23 @@ class DefaultDrawer extends StatelessWidget {
                       ),
                     ),
                     onTap: () {},
+                  ),
+                  ListTile(
+                    title: const Text(
+                      'Toggle Theme',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    trailing: Consumer<ThemeProvider>(
+                      builder: (context, themeProvider, _) => Switch(
+                        value: themeProvider.themeData == lightMode,
+                        onChanged: (_) {
+                          themeProvider.toggleTheme(); // Toggle the theme
+                        },
+                      ),
+                    ),
                   ),
                 ],
               ),
