@@ -161,6 +161,8 @@ class ToggleFlashlightButton extends StatelessWidget {
               Icons.no_flash,
               color: Colors.grey,
             );
+
+          case _ : throw UnimplementedError();
         }
       },
     );

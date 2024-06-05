@@ -1,5 +1,6 @@
 import 'package:cakra_asset_management/src/pages/item/index.dart';
 import 'package:cakra_asset_management/src/pages/item/store.dart';
+import 'package:cakra_asset_management/src/pages/pengambilan/index.dart';
 import 'package:cakra_asset_management/src/pages/request_item/index.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:cakra_asset_management/src/widgets/barcode_scanner_zoom.dart';
@@ -147,7 +148,14 @@ class DashboardPage extends StatelessWidget {
                         margin: const EdgeInsets.all(15.0),
                         child: CircleAvatar(
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PengambilanIndexPage(),
+                                ),
+                              );
+                            },
                             icon: const Icon(Icons.pin_drop),
                             iconSize: 50.0,
                           ),
