@@ -27,7 +27,12 @@ class BaseLayout extends StatelessWidget {
             ],
           ),
         ),
-        child: child,
+        child: DecoratedBox(
+            decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage("assets/bg-office.jpeg"), fit: BoxFit.cover, opacity: 0.1)
+          ),
+          child: child
+        ),
       ),
     );
   }

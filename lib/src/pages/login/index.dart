@@ -10,153 +10,236 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      // resizeToAvoidBottomInset: true,
       body: BaseLayout(
-        child: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              const Image(
-                image: AssetImage("assets/main-logo-white.png"),
-                width: 250,
-                height: 250,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset("assets/main-logo-white.png", width: 120),
+                ],
               ),
+              const SizedBox(height: 30),
+        
               const Text(
                 "Masuk",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Colors.white,
-                ),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Divider(
-                  color: Colors.white,
-                ),
-              ),
+          
+              const SizedBox(height: 10),
+
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 75),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                padding: const EdgeInsets.only(left: 100, right: 100, bottom: 9),
+                child: SizedBox(
+                  height: 40,
+                  child: TextField(
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                    decoration: InputDecoration(
+                      icon: const Icon(Icons.mail, color: Colors.white,),
+                      hintText: "E-mail",
+                      hintStyle: const TextStyle(color: Colors.white),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.1),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),              
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0)
+                    )
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 100, right: 100, bottom: 9),
+                child: SizedBox(
+                  height: 40,
+                  child: TextField(
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                    decoration: InputDecoration(
+                      icon: const Icon(Icons.lock, color: Colors.white,),
+                      hintText: "Kata Sandi",
+                      hintStyle: const TextStyle(color: Colors.white),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.1),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),              
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0)
+                    )
+                  ),
+                ),
+              ),
+            
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: 150,
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(255, 255, 255, 1),
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)
+                      )
+                    ),
+                    minimumSize: MaterialStateProperty.all<Size>(
+                      const Size(double.infinity, 50), // Adjust the width and height as needed
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DashboardPage (),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Masuk Sekarang',
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+          
+              const Text(
+                "Atau daftar dengan:",
+                style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white), textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: 15),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                          const Color.fromRGBO(255, 255, 255, 1),
+                        ),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)
+                          )
+                        ),
+                        minimumSize: MaterialStateProperty.all<Size>(
+                          const Size(double.infinity, 50), // Adjust the width and height as needed
+                        ),
+                      ),
+                      onPressed: () {
+                      },
+                      child: Image.asset("assets/google.png")
+                    ),
+                  ),
+                  
+                  Container(
+                    width: 50,
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                          const Color.fromRGBO(255, 255, 255, 1),
+                        ),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)
+                          )
+                        ),
+                        minimumSize: MaterialStateProperty.all<Size>(
+                          const Size(double.infinity, 50), // Adjust the width and height as needed
+                        ),
+                      ),
+                      onPressed: () {
+                      },
+                      child: Image.asset("assets/microsoft.png")
+                    ),
+                  ),
+                ],
+              ),
+              
+              const SizedBox(height: 15),
+
+              FractionallySizedBox(
+                // widthFactor: 0.2,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: const TextField(
-                        style: TextStyle(color: Colors.white, fontSize: 17),
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          labelStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                          ),
-                        ),
-                      ),
+                    const Text(
+                      "Belum Mendaftar?",
+                      style: TextStyle(color: Colors.white),
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: const TextField(
-                        style: TextStyle(color: Colors.white, fontSize: 17),
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: "Kata Sandi",
-                          labelStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 50),
+                    const SizedBox(width: 2),
+                    TextButton(
+                      onPressed: () {},
                       child: TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromRGBO(255, 244, 144, 1),
-                        ),
                         onPressed: () {
-                          Navigator.pushAndRemoveUntil(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const DashboardPage(),
+                              builder: (context) => const RegisterPage(),
                             ),
-                            (Route<dynamic> route) => false,
                           );
                         },
                         child: const Text(
-                          "Masuk",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Belum mendaftar?",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const RegisterPage(),
-                              ),
-                            );
-                          },
-                          child: Transform.translate(
-                            offset: const Offset(0, 5),
-                            child: const Text(
-                              "Daftar",
-                              style: TextStyle(
-                                shadows: [
-                                  Shadow(
-                                    color: Color.fromRGBO(255, 244, 144, 1),
-                                    offset: Offset(0, -5),
-                                  )
-                                ],
-                                color: Colors.transparent,
-                                decoration: TextDecoration.underline,
-                                decorationColor:
-                                    Color.fromRGBO(255, 244, 144, 1),
-                                decorationThickness: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ForgotPasswordPage(),
-                          ),
-                        );
-                      },
-                      child: Transform.translate(
-                        offset: const Offset(0, 5),
-                        child: const Text(
-                          "Lupa kata sandi?",
+                          "Daftar",
                           style: TextStyle(
                             color: Color.fromRGBO(255, 244, 144, 1),
+                            decoration: TextDecoration.underline,
+                            decorationColor: Color.fromRGBO(255, 244, 144, 1),
                           ),
                         ),
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(height: 5),
+              TextButton(
+                onPressed: () {},
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPasswordPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Lupa Kata Sandi",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 244, 144, 1),
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color.fromRGBO(255, 244, 144, 1),
+                    ),
+                  ),
                 ),
               ),
             ],
