@@ -3,6 +3,7 @@ import 'package:cakra_asset_management/src/pages/profile/index.dart';
 import 'package:cakra_asset_management/theme/theme.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class DefaultDrawer extends StatelessWidget {
@@ -91,19 +92,41 @@ class DefaultDrawer extends StatelessWidget {
                     onTap: () {},
                   ),
                   ListTile(
-                    title: const Text(
-                      'Toggle Theme',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    title: const Row(
+                      children: [
+                        Text(
+                          'Toggle Theme',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                     trailing: Consumer<ThemeProvider>(
-                      builder: (context, themeProvider, _) => Switch(
-                        value: themeProvider.themeData == lightMode,
+                      builder: (context, themeProvider, _) => Switch.adaptive(
+                        value: themeProvider.themeData == darkMode,
                         onChanged: (_) {
                           themeProvider.toggleTheme(); // Toggle the theme
                         },
+                        trackOutlineColor: MaterialStateProperty.all(
+                          Colors.grey
+                        ),
+                        inactiveTrackColor: Theme.of(context).colorScheme.secondary,
+                        activeTrackColor: Theme.of(context).colorScheme.secondary,
+                        thumbIcon: MaterialStateProperty.all(
+                          Icon(
+                            themeProvider.themeData == darkMode
+                                ? Icons.dark_mode
+                                : Icons.light_mode,
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),  
+                        ),
+                        thumbColor: MaterialStateProperty.all(
+                          themeProvider.themeData == darkMode
+                              ? Colors.yellow
+                              : Colors.blueGrey,
+                        ),
                       ),
                     ),
                   ),

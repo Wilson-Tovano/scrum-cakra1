@@ -28,9 +28,9 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
         body: ThemedLayout(
           child: Column(
             children: [
-              Container(
+              const SizedBox(
                 width: double.infinity,
-                child: const TabBar(
+                child: TabBar(
                 isScrollable: false,
                 tabs: [
                   Tab(child: Text('Riwayat')),
@@ -56,9 +56,9 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Laptop',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -78,9 +78,9 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Row(
+                                          const Row(
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            children: const [
+                                            children: [
                                               Expanded(
                                                 flex: 3,
                                                 child: Text("ACER"),
@@ -103,7 +103,7 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                             ],
                                           ),
                                           const SizedBox(height: 10),
-                                          Container(
+                                          SizedBox(
                                             width: 95,
                                             height:25,
                                             child:  OutlinedButton(
@@ -126,11 +126,11 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                   ],
                                 ),
                                 const Divider(),
-                                Row(
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: const [
+                                  children: [
                                     Text("Tanggal Pengambilan : ",style: TextStyle(fontSize: 12)),
-                                    Text("25 April 2024", style: const TextStyle(
+                                    Text("25 April 2024", style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,),),
                                   ],
@@ -145,7 +145,6 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                           context: context,
                                           builder: (context) => deleteRiwayat(context)
                                       ),
-                                    child: Icon(Icons.delete),
                                     style: ButtonStyle(
                                       // backgroundColor: Colors.red,
                                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -154,6 +153,7 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                         )
                                       )
                                     ),
+                                    child: const Icon(Icons.delete),
                                   ),
                                 ),
                               ],
@@ -177,9 +177,9 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Laptop',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -199,9 +199,9 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Row(
+                                          const Row(
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            children: const [
+                                            children: [
                                               Expanded(
                                                 flex: 3,
                                                 child: Text("ACER"),
@@ -217,7 +217,7 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                             ],
                                           ),
                                           const SizedBox(height: 10),
-                                          Container(
+                                          SizedBox(
                                             width: 95,
                                             height:25,
                                             child:  OutlinedButton(
@@ -240,11 +240,11 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                   ],
                                 ),
                                 const Divider(),
-                                Row(
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: const [
+                                  children: [
                                     Text("Tanggal Pengambilan : ",style: TextStyle(fontSize: 12)),
-                                    Text("25 April 2024", style: const TextStyle(
+                                    Text("25 April 2024", style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,),),
                                   ],
@@ -258,7 +258,6 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                           context: context,
                                           builder: (context) => sudahDiambil(context)
                                       ),
-                                    child: const Text("SUDAH DIAMBIL"),
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
@@ -266,6 +265,7 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                         )
                                       )
                                     ),
+                                    child: const Text("SUDAH DIAMBIL"),
                                   ),
                                 ),
                               ],

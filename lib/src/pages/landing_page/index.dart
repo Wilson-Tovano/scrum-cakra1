@@ -10,21 +10,22 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BaseLayout(
-        child: Center(
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            width: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 90),
                     const Image(
                       image: AssetImage("assets/main-logo-white.png"),
                       width: 250,
                       height: 150,
                     ),
+                    const SizedBox(height: 90),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -96,14 +97,14 @@ class LandingPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Column(
-                  children: [
-                    Text("Copyright © 2024 Cakra Software Inc.", style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
-                    Text("All Rights Reserved", style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),),
-                  ],
-                ),
-              ],
-            ),
+              ),
+              const Column(
+                children: [
+                  Text("Copyright © 2024 Cakra Software Inc.", style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
+                  Text("All Rights Reserved", style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),),
+                ],
+              ),
+            ],
           ),
         ),
       ),
