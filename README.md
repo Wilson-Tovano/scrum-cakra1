@@ -14,3 +14,6 @@ Flutter application
 
 - Use `flutter pub get` to get started
 
+
+This repository is handled by:
+1. Wilson Tovano (221113421)
