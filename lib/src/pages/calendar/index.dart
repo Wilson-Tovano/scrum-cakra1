@@ -62,7 +62,7 @@ class _CalendarPageState extends State<CalendarPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Events',
+                      'Event',
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     IconButton(
