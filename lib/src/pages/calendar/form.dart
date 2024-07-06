@@ -20,7 +20,7 @@ class _AddEventFormState extends State<AddEventForm> {
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
+      lastDate: DateTime(2100),
     );
     if (picked != null) {
       setState(() {
@@ -36,7 +36,7 @@ class _AddEventFormState extends State<AddEventForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(15.0),
       child: Form(
         key: _formKey,
         child: Column(

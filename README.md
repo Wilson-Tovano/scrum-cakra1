@@ -17,3 +17,4 @@ Flutter application
 
 This repository is handled by:
 1. Wilson Tovano (221113421)
+2. Karina Desi Liady (221111905)
