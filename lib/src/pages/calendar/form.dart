@@ -20,7 +20,7 @@ class _AddEventFormState extends State<AddEventForm> {
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
+      lastDate: DateTime(2100),
     );
     if (picked != null) {
       setState(() {
