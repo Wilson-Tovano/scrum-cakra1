@@ -1,9 +1,13 @@
+import 'package:cakra_asset_management/src/models/authorization_provider.dart';
+import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
+import 'package:cakra_asset_management/src/pages/drawer_pages/bantuan.dart';
+import 'package:cakra_asset_management/src/pages/drawer_pages/notification_index.dart';
+import 'package:cakra_asset_management/src/pages/drawer_pages/tentang.dart';
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:cakra_asset_management/src/pages/profile/index.dart';
 import 'package:cakra_asset_management/theme/theme.dart';
 import 'package:cakra_asset_management/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class DefaultDrawer extends StatelessWidget {
@@ -11,6 +15,8 @@ class DefaultDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<AuthorizationProvider>(context);
+
     return Drawer(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -49,59 +55,78 @@ class DefaultDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Profil',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Form Permintaan',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Form Persetujuan',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Item ATK',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Row(
-                      children: [
-                        Text(
-                          'Toggle Theme',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                    onTap: () {
+                       Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DashboardPage(),
                         ),
-                      ],
+                      );
+                    },
+                  ),
+
+                  //Only for user not admin
+                  auth.isAdmin ?
+                  Container() : 
+                  ListTile(
+                    title: const Text(
+                      'Notifikasi',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotificationPage(),
+                        ),
+                      );
+                    },
+                  ),
+
+                  ListTile(
+                    title: const Text(
+                      'Bantuan',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BantuanPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text(
+                      'Tentang',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TentangPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text(
+                      'Toggle Theme',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     trailing: Consumer<ThemeProvider>(
                       builder: (context, themeProvider, _) => Switch.adaptive(
@@ -154,6 +179,7 @@ class DefaultDrawer extends StatelessWidget {
             ListTile(
               title: const Text('Keluar'),
               onTap: () {
+                auth.logOut();
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(

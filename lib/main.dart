@@ -1,9 +1,11 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
-import 'package:cakra_asset_management/src/models/item_model.dart';
-import 'package:cakra_asset_management/src/models/request_item_model.dart';
-import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
+import 'package:cakra_asset_management/src/models/authorization_provider.dart';
+import 'package:cakra_asset_management/src/models/calendar_model.dart';
+import 'package:cakra_asset_management/src/models/permintaan_item_model.dart';
+import 'src/models/item_model.dart';
+import 'src/pages/landing_page/index.dart';
 import 'package:flutter/material.dart';
-import 'package:cakra_asset_management/theme/theme_provider.dart';
+import 'theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,8 +18,14 @@ void main() {
         create: (context) => ItemModel(),
       ),
       ChangeNotifierProvider(
-        create: (context) => RequestItemModel(),
-      )
+        create: (context) => PermintaanItemInfoProvider()
+      ),
+      ChangeNotifierProvider(
+        create: (context) => AuthorizationProvider()
+      ),
+      ChangeNotifierProvider(
+        create: (context) => EventProvider(),
+      ),
     ],
     child: const MyApp(),
   ));
