@@ -10,7 +10,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kontak Saya'),
+        title: const Text('Kontak Saya123'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(
