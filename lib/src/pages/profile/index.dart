@@ -79,7 +79,7 @@ class ProfilePage extends StatelessWidget {
                             const Expanded(
                               flex: 2,
                               child: Text(
-                                "Whatsapp",
+                                "WhatsApp",
                                 style: TextStyle(
                                   // fontWeight: FontWeight.bold,
                                   color: Colors.white,
