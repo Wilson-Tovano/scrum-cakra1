@@ -58,7 +58,7 @@ class DetailPage extends StatelessWidget {
                                       capitalize(permintaanItemInfoList
                                           .itemInfo[index].nama),
                                       style: const TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 25,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
