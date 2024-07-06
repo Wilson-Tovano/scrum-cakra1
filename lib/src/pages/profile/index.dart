@@ -190,7 +190,7 @@ class ProfilePage extends StatelessWidget {
                             Expanded(
                               flex: 2,
                               child: Text(
-                                "Tiktok",
+                                "TikTok",
                                 style: TextStyle(
                                   // fontWeight: FontWeight.bold,
                                   color: Colors.white,
